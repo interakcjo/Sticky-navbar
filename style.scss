@@ -1,0 +1,85 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+html,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.main-wrapper {
+  padding: 25px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(darken(grey, 40%), 1);
+  padding: 25px;
+  transition: padding 0.5s linear, background 0.5s linear;
+  &.active {
+    position: fixed;
+    padding: 15px;
+    background: rgba(darken(grey, 40%), 0.9);
+    animation: slideIn 0.5s linear both;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.branding {
+  &__title {
+    font-size: 24px;
+    font-weight: bold;
+    color: dodgerblue;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 4px;
+    text-shadow: 0 0 15px dodgerblue;
+  }
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  &__link {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+}
+
+.page-wrapper {
+  height: 100vh;
+  min-height: 900px;
+  background: url("https://unsplash.it/1280/1280") no-repeat center;
+  background-size: cover;
+}
